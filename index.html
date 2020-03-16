@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <title>Mini Todo</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    New Todo: <input type="text"> <button>Save</button>
+    <ul>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.title }} <button>Delete</button>
+      </li>
+    </ul>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        todos: [
+          { id: 1, title: 'fork this project in your repository' },
+          { id: 2, title: 'add new feature: add new todo' },
+          { id: 3, title: 'add new feature: delete todo '},
+          { id: 4, title: 'add new feature: todo has its description field' },
+          { id: 5, title: 'create a pull request' },
+          { id: 6, title: 'waiting for reposiroty owner to merge your branch' }
+        ],
+        message: 'Hello World'
+      },
+      methods: {
+        increase () {
+          console.log('hello')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
