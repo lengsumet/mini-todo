@@ -15,6 +15,7 @@
         {{ todo.title }} <button @click="delete(index)">Delete</button>
       </li>
     </ul>
+    <h2> Count Todos </h2> <h3>{{ countTodo }}</h3>
   </div>
   <script>
     new Vue({
@@ -28,7 +29,12 @@
           { id: 5, title: 'create a pull request' },
           { id: 6, title: 'waiting for reposiroty owner to merge your branch' }
         ],
-        message: 'Hello World'
+        message: 'Mini-Todo'
+      },
+      computed: {
+        countTodo () {
+          return this.todos.length
+        }
       },
       methods: {
         increase () {
@@ -36,6 +42,7 @@
         },
         delete(index){
           this.todos.splice(index,1)
+          console.log('bye')
         }
       }
     })
