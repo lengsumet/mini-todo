@@ -11,8 +11,8 @@
     <h1>{{ message }}</h1>
     New Todo: <input type="text"> <button>Save</button>
     <ul>
-      <li v-for="(todo,index) in todos" :key="todo.id">
-        {{ todo.title }} <button @click="delete(index)">Delete</button>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.title }} <button>Delete</button>
       </li>
     </ul>
   </div>
@@ -33,9 +33,6 @@
       methods: {
         increase () {
           console.log('hello')
-        },
-        delete(index){
-          this.todos.splice(index,1)
         }
       }
     })
