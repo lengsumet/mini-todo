@@ -15,6 +15,7 @@
         {{ todo.title }} <button>Delete</button>
       </li>
     </ul>
+    <h2> Count Todos </h2> <h3>{{ countTodo }}</h3>
   </div>
   <script>
     new Vue({
@@ -30,9 +31,15 @@
         ],
         message: 'Mini-Todo'
       },
+      computed: {
+        countTodo () {
+          return this.todos.length
+        }
+      },
       methods: {
         increase () {
           console.log('hello')
+          console.log('bye')
         }
       }
     })
