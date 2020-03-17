@@ -15,6 +15,7 @@
         {{ todo.title }} <button>Delete</button>
       </li>
     </ul>
+    <h2> Count Todos </h2> <h3>{{ countTodo }}</h3>
   </div>
   <script>
     new Vue({
@@ -29,6 +30,11 @@
           { id: 6, title: 'waiting for reposiroty owner to merge your branch' }
         ],
         message: 'Hello World'
+      },
+      computed: {
+        countTodo () {
+          return this.todos.length
+        }
       },
       methods: {
         increase () {
